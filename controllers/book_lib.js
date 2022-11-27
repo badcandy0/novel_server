@@ -2,7 +2,7 @@
  * @Author: Badcandy 568197314@qq.com
  * @Date: 2022-11-09 10:10:08
  * @LastEditors: Badcandy 568197314@qq.com
- * @LastEditTime: 2022-11-19 10:01:31
+ * @LastEditTime: 2022-11-27 14:00:21
  * @FilePath: \novel_server\controllers\book_lib.js
  * @Description: 
  * 
@@ -239,7 +239,7 @@ const upBook = (req, res) => {
 }
 // 更新小说
 const updateBook = (req, res) => {
-    const book_id = req.query.book_id;
+    const book_id = req.body.book_id;
     const chapter_id = req.body.chapter_id;
     const chapter_name = req.body.chapter_name;
 
