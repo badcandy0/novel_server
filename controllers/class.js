@@ -2,7 +2,7 @@
  * @Author: Badcandy 568197314@qq.com
  * @Date: 2022-11-09 14:51:53
  * @LastEditors: Badcandy 568197314@qq.com
- * @LastEditTime: 2022-11-19 14:37:20
+ * @LastEditTime: 2022-11-27 20:18:40
  * @FilePath: \novel_server\controllers\class.js
  * @Description: 
  * 
@@ -33,7 +33,7 @@ const getClass = (req, res) => {
 // 获取分类的分组信息
 const getClassGroups = (req, res) => {
     const class_name = req.query.class_name;
-    db.query('SELECT bl.auth_name,bl.book_name,bl.book_id,bl.cover_url,bl.detials,bl.love,bl.click_count FROM class_group cg LEFT JOIN book_lib bl ON cg.book_id=bl.book_id WHERE class_name = ?', [class_name], (err, results) => {
+    db.query('SELECT bl.auth_name,bl.book_name,bl.book_id,bl.cover_url,bl.detials,bl.love,bl.click_count,cg.class_id FROM class_group cg LEFT JOIN book_lib bl ON cg.book_id=bl.book_id WHERE class_name = ?', [class_name], (err, results) => {
         if (err) {
             console.log(err)
             return res.status(500).json({
